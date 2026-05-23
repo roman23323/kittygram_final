@@ -80,7 +80,6 @@ jobs:
           context: ./frontend/
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/kittygram_frontend:latest
-
       - name: Push gateway to Docker Hub
         uses: docker/build-push-action@v5
         with:
