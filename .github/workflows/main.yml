@@ -32,7 +32,9 @@ jobs:
         run: ruff check backend/
 
       - name: Run backend tests
-        run: pytest --ignore-no-tests-collected backend/
+        run: |
+          cd backend/
+          PYTHONPATH=. DJANGO_SETTINGS_MODULE=kittygram_backend.settings pytest cats/tests.py
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
